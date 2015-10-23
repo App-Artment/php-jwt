@@ -3,18 +3,16 @@ namespace Firebase\JWT;
 
 class ExpiredException extends \UnexpectedValueException
 {
+    protected $payload;
 
-	protected $payload;
-
-    public function __contruct($message, $payload)
+    public function __construct($message, $payload)
     {
-        $this->payload = payload;
+        $this->payload = $payload;
         parent::__construct($message);
     }
 
-    public method getPayload()
-	{
-		return $this->payload;
-	}
-
+    public function getPayload()
+    {
+        return $this->payload;
+    }
 }
